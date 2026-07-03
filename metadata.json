@@ -1,0 +1,6 @@
+{
+  "name": "1% of China",
+  "description": "Premium e-commerce marketplace featuring both local Bangladesh warehouse products with 1-3 day fast delivery and customized direct-import goods from Chinese suppliers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
