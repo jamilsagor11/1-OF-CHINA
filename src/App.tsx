@@ -197,6 +197,8 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [selectedOriginFilter, setSelectedOriginFilter] = useState<"all" | "BD" | "China">("all");
+  const [minPrice, setMinPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   
   // Product zoom state
@@ -439,12 +441,12 @@ export default function App() {
   // Category array definitions
   const CATEGORIES = [
     "All",
-    "Gifts",
-    "Electronics",
-    "Smart Gadgets",
-    "Home & Kitchen",
-    "Fashion",
-    "Computer Accessories"
+    "Barcode Scanners",
+    "Document Scanners",
+    "Wearable Scanners",
+    "Handheld Scanners",
+    "Industrial Scanners",
+    "Label Printers"
   ];
 
   // Load products list on mount
@@ -780,6 +782,15 @@ export default function App() {
       maximumFractionDigits: activeCurConfig.code === "USD" ? 2 : 0 
     })}`;
   };
+
+  // Filtered products list based on price inputs (inputs in USD)
+  const displayedProducts = products.filter((p) => {
+    // 0.0085 BDT rate to USD
+    const priceInUsd = p.discountedPrice * 0.0085;
+    if (minPrice && parseFloat(minPrice) > priceInUsd) return false;
+    if (maxPrice && parseFloat(maxPrice) < priceInUsd) return false;
+    return true;
+  });
 
   // Dynamic zoom effect logic for detailed products gallery screen
   const handleMouseMoveZoom = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -1228,77 +1239,147 @@ export default function App() {
               </div>
             </div>
 
-            {/* 5. DYNAMIC CATALOGUE SHOWCASE GRID */}
-            <div id="catalog-showcase" className="space-y-6">
+            {/* 5. DYNAMIC CATALOGUE SHOWCASE GRID WITH SIDEBAR */}
+            <div id="catalog-showcase" className="grid grid-cols-1 lg:grid-cols-4 gap-8">
               
-              {/* Toolbar Section & Filter Indicator */}
-              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-gray-200 pb-4">
-                <div>
-                  <h2 className="text-xl font-bold font-display text-slate-800 uppercase tracking-tight flex items-center gap-2">
-                    🛍️ Selected Showcase: {selectedCategory === "All" ? "Full Collection" : selectedCategory}
-                  </h2>
-                  <p className="text-xs text-slate-400 mt-0.5">
-                    Showing {products.length} products. Filtered by:{" "}
-                    <strong className="text-slate-700 font-semibold">
-                      {selectedOriginFilter === 'all' ? "All Warehouses" : selectedOriginFilter === "BD" ? "Bangladesh Warehouse Only" : "Direct Sourced from China Only"}
-                    </strong>
-                  </p>
-                </div>
+              {/* SIDEBAR FILTERS (Left column, desktop only) */}
+              <div className="lg:col-span-1 hidden lg:block">
+                <div className="bg-white rounded-3xl border border-slate-100 p-6 space-y-6 sticky top-24 shadow-xs">
+                  <div className="flex justify-between items-center">
+                    <h3 className="font-extrabold text-sm uppercase tracking-wider text-slate-800">Filters</h3>
+                    <button 
+                      onClick={() => {
+                        setSelectedCategory("All");
+                        setSelectedOriginFilter("all");
+                        setSearchQuery("");
+                        setMinPrice("");
+                        setMaxPrice("");
+                      }}
+                      className="text-xs font-bold text-[#E53935] hover:text-red-700 cursor-pointer"
+                    >
+                      Clear all
+                    </button>
+                  </div>
 
-                {/* Filter quick controls */}
-                <div className="flex items-center gap-2">
-                  <button
-                    onClick={() => {
-                      setSelectedOriginFilter("all");
-                    }}
-                    className={`px-3 py-1.5 text-xs font-bold rounded-xl transition-all uppercase ${
-                      selectedOriginFilter === "all" ? "bg-[#212121] text-white" : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-                    }`}
-                  >
-                    All Items
-                  </button>
-                  <button
-                    onClick={() => {
-                      setSelectedOriginFilter("BD");
-                    }}
-                    className={`px-3 py-1.5 text-xs font-bold rounded-xl transition-all uppercase flex items-center gap-1 ${
-                      selectedOriginFilter === "BD" ? "bg-emerald-600 text-white" : "bg-emerald-50 text-emerald-800 hover:bg-emerald-100"
-                    }`}
-                  >
-                    🇧🇩 BD Warehouse Stock
-                  </button>
-                  <button
-                    onClick={() => {
-                      setSelectedOriginFilter("China");
-                    }}
-                    className={`px-3 py-1.5 text-xs font-bold rounded-xl transition-all uppercase flex items-center gap-1 ${
-                      selectedOriginFilter === "China" ? "bg-indigo-600 text-white" : "bg-indigo-50 text-indigo-800 hover:bg-indigo-100"
-                    }`}
-                  >
-                    🇨🇳 China Direct Import
-                  </button>
+                  {/* Category Selection Filter list */}
+                  <div className="space-y-3">
+                    <h4 className="text-xs font-extrabold text-slate-400 uppercase tracking-widest">Category</h4>
+                    <div className="flex flex-col gap-1.5">
+                      {CATEGORIES.map((cat) => {
+                        const isSelected = selectedCategory === cat;
+                        return (
+                          <button
+                            key={cat}
+                            onClick={() => {
+                              setSelectedCategory(cat);
+                              document.getElementById("catalog-showcase")?.scrollIntoView({ behavior: "smooth" });
+                            }}
+                            className={`w-full text-left px-4 py-2.5 rounded-xl text-xs font-bold transition-all ${
+                              isSelected 
+                                ? "bg-[#0b2b5c] text-white shadow-xs font-black" 
+                                : "text-slate-600 hover:bg-slate-50 hover:text-slate-850"
+                            }`}
+                          >
+                            {cat}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Price Range Filter (USD) */}
+                  <div className="space-y-3 pt-4 border-t border-slate-100">
+                    <h4 className="text-xs font-extrabold text-slate-400 uppercase tracking-widest">Price Range (USD)</h4>
+                    <div className="grid grid-cols-2 gap-2">
+                      <input 
+                        type="number" 
+                        placeholder="Min" 
+                        value={minPrice} 
+                        onChange={(e) => setMinPrice(e.target.value)}
+                        className="w-full text-xs bg-white border border-slate-200 rounded-xl px-3 py-2.5 focus:outline-none focus:border-[#0b2b5c] text-slate-700 font-medium"
+                      />
+                      <input 
+                        type="number" 
+                        placeholder="Max" 
+                        value={maxPrice} 
+                        onChange={(e) => setMaxPrice(e.target.value)}
+                        className="w-full text-xs bg-white border border-slate-200 rounded-xl px-3 py-2.5 focus:outline-none focus:border-[#0b2b5c] text-slate-700 font-medium"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Products Rendering Grid */}
-              {products.length === 0 ? (
-                <div className="bg-white border border-slate-150 rounded-3xl p-12 text-center text-slate-500 space-y-3">
-                  <p className="text-lg">No products found inside the registry.</p>
-                  <p className="text-xs max-w-md mx-auto">Try resetting filters or categories selection to expand searching criteria parameters.</p>
-                  <button
-                    onClick={() => {
-                      setSelectedCategory("All");
-                      setSelectedOriginFilter("all");
-                      setSearchQuery("");
-                    }}
-                    className="bg-[#E53935] text-white text-xs font-bold py-2 px-5 rounded-full"
-                  >
-                    Clear All Filters
-                  </button>
+              {/* PRODUCTS LISTING AREA (Right columns) */}
+              <div className="lg:col-span-3 space-y-6">
+                
+                {/* Toolbar Section & Filter Indicator */}
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-gray-200 pb-4">
+                  <div>
+                    <h2 className="text-lg font-extrabold font-display text-slate-800 uppercase tracking-tight flex items-center gap-2">
+                      🛍️ Selected Showcase: {selectedCategory === "All" ? "Full Collection" : selectedCategory}
+                    </h2>
+                    <p className="text-xs text-slate-400 mt-0.5">
+                      Showing {displayedProducts.length} products in <strong className="text-slate-700 font-semibold">{selectedCategory}</strong>.
+                    </p>
+                  </div>
+
+                  {/* Filter quick controls */}
+                  <div className="flex items-center gap-2">
+                    <button
+                      onClick={() => {
+                        setSelectedOriginFilter("all");
+                      }}
+                      className={`px-3 py-1.5 text-xs font-bold rounded-xl transition-all uppercase ${
+                        selectedOriginFilter === "all" ? "bg-[#212121] text-white" : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                      }`}
+                    >
+                      All Items
+                    </button>
+                    <button
+                      onClick={() => {
+                        setSelectedOriginFilter("BD");
+                      }}
+                      className={`px-3 py-1.5 text-xs font-bold rounded-xl transition-all uppercase flex items-center gap-1 ${
+                        selectedOriginFilter === "BD" ? "bg-emerald-600 text-white" : "bg-emerald-50 text-emerald-800 hover:bg-emerald-100"
+                      }`}
+                    >
+                      🇧🇩 BD Warehouse
+                    </button>
+                    <button
+                      onClick={() => {
+                        setSelectedOriginFilter("China");
+                      }}
+                      className={`px-3 py-1.5 text-xs font-bold rounded-xl transition-all uppercase flex items-center gap-1 ${
+                        selectedOriginFilter === "China" ? "bg-indigo-600 text-white" : "bg-indigo-50 text-indigo-800 hover:bg-indigo-100"
+                      }`}
+                    >
+                      🇨🇳 China Import
+                    </button>
+                  </div>
                 </div>
-              ) : (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {products.map((p) => {
+
+                {/* Products Rendering Grid */}
+                {displayedProducts.length === 0 ? (
+                  <div className="bg-white border border-slate-150 rounded-3xl p-12 text-center text-slate-500 space-y-3">
+                    <p className="text-lg font-bold">No products found matching these criteria.</p>
+                    <p className="text-xs max-w-md mx-auto">Try resetting filters, price ranges, or category selection to expand searching criteria parameters.</p>
+                    <button
+                      onClick={() => {
+                        setSelectedCategory("All");
+                        setSelectedOriginFilter("all");
+                        setSearchQuery("");
+                        setMinPrice("");
+                        setMaxPrice("");
+                      }}
+                      className="bg-[#E53935] text-white text-xs font-bold py-2.5 px-6 rounded-full hover:bg-red-700 transition-all cursor-pointer"
+                    >
+                      Clear All Filters
+                    </button>
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                    {displayedProducts.map((p) => {
                     const isWishlisted = wishlist.includes(p.id);
                     return (
                       <div
@@ -1437,6 +1518,7 @@ export default function App() {
                   })}
                 </div>
               )}
+              </div>
             </div>
 
           </div>
@@ -2349,7 +2431,10 @@ export default function App() {
                       if (!wishlist.includes(p.id)) return null;
                       return (
                         <div key={p.id} className="bg-slate-50/50 border border-slate-150 p-3 rounded-2xl flex items-center justify-between">
-                          <div className="flex items-center gap-2 text-xs">
+                          <div 
+                            className="flex items-center gap-2 text-xs cursor-pointer hover:opacity-80 transition-opacity select-none"
+                            onClick={() => setSelectedProduct(p)}
+                          >
                             <img src={p.image} className="w-10 h-10 object-cover rounded-lg" alt="" />
                             <div>
                               <p className="font-semibold text-slate-800 line-clamp-1">{p.name}</p>
@@ -2747,14 +2832,12 @@ export default function App() {
 
                 <div className="flex items-center gap-3.5 overflow-x-auto pb-1 scrollbar-none">
                   {[
-                    { key: "Electronics", name: "Electronics", bg: "bg-amber-50 text-amber-600", icon: "⚡" },
-                    { key: "Fashion", name: "Fashion", bg: "bg-blue-50 text-blue-600", icon: "👗" },
-                    { key: "Home & Kitchen", name: "Home", bg: "bg-emerald-50 text-emerald-600", icon: "🏡" },
-                    { key: "Gifts", name: "Gifts", bg: "bg-rose-50 text-rose-600", icon: "🎁" },
-                    { key: "Toys", name: "Toys", bg: "bg-orange-50 text-orange-600", icon: "🧸" },
-                    { key: "Beauty", name: "Beauty", bg: "bg-pink-50 text-pink-600", icon: "💄" },
-                    { key: "Sports", name: "Sports", bg: "bg-teal-50 text-teal-600", icon: "⚽" },
-                    { key: "Books", name: "Books", bg: "bg-indigo-50 text-indigo-600", icon: "📚" }
+                    { key: "Barcode Scanners", name: "Barcode", bg: "bg-amber-50 text-amber-600", icon: "🏷️" },
+                    { key: "Document Scanners", name: "Doc Scan", bg: "bg-blue-50 text-blue-600", icon: "📄" },
+                    { key: "Wearable Scanners", name: "Wearable", bg: "bg-emerald-50 text-[#00C853]", icon: "💍" },
+                    { key: "Handheld Scanners", name: "Handheld", bg: "bg-rose-50 text-[#E53935]", icon: "🔫" },
+                    { key: "Industrial Scanners", name: "Industrial", bg: "bg-orange-50 text-orange-600", icon: "🏭" },
+                    { key: "Label Printers", name: "Printers", bg: "bg-pink-50 text-pink-600", icon: "🖨️" }
                   ].map((catItem) => (
                     <button
                       key={catItem.key}
@@ -2787,17 +2870,17 @@ export default function App() {
                     {selectedCategory === "All" ? "Feature Products" : selectedCategory}
                   </h3>
                   <span className="text-[9.5px] text-slate-500 font-bold bg-white px-2.5 py-1 rounded-full shadow-2xs border">
-                    {products.length} Products
+                    {displayedProducts.length} Products
                   </span>
                 </div>
 
-                {products.length === 0 ? (
+                {displayedProducts.length === 0 ? (
                   <div className="bg-white border rounded-2xl p-8 text-center text-slate-400 text-xs shadow-sm">
                     No imported inventory matched the specific category hubs.
                   </div>
                 ) : (
                   <div className="grid grid-cols-2 gap-3 pb-8">
-                    {products.map((p) => {
+                    {displayedProducts.map((p) => {
                       const isWishlisted = wishlist.includes(p.id);
                       return (
                         <div 
@@ -3134,7 +3217,15 @@ export default function App() {
                       const prod = products.find(p => p.id === wId);
                       if (!prod) return null;
                       return (
-                        <div key={wId} className="bg-slate-50 p-2 rounded-xl relative border" onClick={() => setSelectedProduct(prod)}>
+                        <div 
+                          key={wId} 
+                          className="bg-slate-50 p-2 rounded-xl relative border cursor-pointer hover:border-[#E53935] hover:shadow-xs transition-all select-none" 
+                          onClick={() => {
+                            setSelectedProduct(prod);
+                            setCurrentView("product-details");
+                            window.scrollTo({ top: 0, behavior: "smooth" });
+                          }}
+                        >
                           <img src={prod.image} className="w-full h-14 object-cover rounded-lg" />
                           <h5 className="font-bold text-[10px] text-slate-805 truncate mt-1">{prod.name}</h5>
                           <span className="text-[#E53935] font-black text-[9.5px] block">{convertPrice(prod.discountedPrice)}</span>

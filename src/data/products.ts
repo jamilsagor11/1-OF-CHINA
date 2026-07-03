@@ -3,96 +3,196 @@ import { Product, ShippingOrigin } from "../types";
 export const INITIAL_PRODUCTS: Product[] = [
   {
     id: "prod-1",
-    name: "Luxury Rose Quartz Eternal Music Box",
-    description: "An exquisite handmade musical jewelry box made with authentic crystal rose quartz accents and a 24k gold-plated mechanical clockwork wind-up engine. Plays a celestial melody.",
-    category: "Gifts",
-    originalPrice: 4200,
-    discountedPrice: 2950,
+    name: "SianLab Pro 2D Wireless Barcode Scanner",
+    description: "Professional-grade 2D cordless scanner with integrated Android terminal PDA, ultra-rugged drop-proof casing, and dual fast-charge dock station. Engineered for modern high-speed warehouse logistics, retail inventory, and enterprise supply chain management.",
+    category: "Barcode Scanners",
+    originalPrice: 15290,
+    discountedPrice: 10580,
     rating: 4.8,
-    reviewCount: 34,
-    image: "https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&q=80&w=400",
+    reviewCount: 423,
+    image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=80&w=400",
     gallery: [
-      "https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&q=80&w=600",
-      "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&q=80&w=600"
+      "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=600"
     ],
     specs: {
-      "Material": "Preserved Rose Quartz & Crystal Glass",
-      "Tune": "Castle in the Sky",
-      "Movement": "Sankyo 18-Note Mechanical Gold-Plated",
-      "Dimensions": "12cm x 12cm x 10cm",
-      "Weight": "450g"
+      "Scan Engine": "CMOS 2D Area Imager",
+      "Wireless Range": "Up to 150 meters (open air)",
+      "OS Compatibility": "Android 11, Windows, macOS, Linux",
+      "Drop Spec": "Withstands multiple 2.0m drops to concrete",
+      "Battery Life": "Up to 24 hours active scanning"
     },
     variants: [
-      { id: "v1-pink", name: "Soft Blossom Pink", priceModifier: 0, stock: 12 },
-      { id: "v1-violet", name: "Amethyst Purple", priceModifier: 250, stock: 6 }
+      { id: "v1-standard", name: "Standard Scanner Unit", priceModifier: 0, stock: 180 },
+      { id: "v1-pda", name: "PDA Terminal Edition (+Dock)", priceModifier: 3450, stock: 65 }
     ],
     reviews: [
-      { id: "r1-1", userName: "Aisha Rahman", rating: 5, date: "2026-05-12", comment: "Absolutely breathtaking! Gifted this to my sister for her wedding anniversary and she cried of joy. Craftsmanship is top-notch." },
-      { id: "r1-2", userName: "Tanvir Ahmed", rating: 4, date: "2026-05-24", comment: "Very beautiful. The sound is crystal clear. Took 2 days to deliver to Chittagong." }
+      { id: "r1-1", userName: "Jamil Chowdhury", rating: 5, date: "2026-06-15", comment: "Outstanding durability and range. Best scanner we have ever used in our Dhaka sorting center. Connected instantly to our custom inventory system." },
+      { id: "r1-2", userName: "Aisha Rahman", rating: 4, date: "2026-06-20", comment: "Really fast scanning and has amazing barcode decoding capability even with torn barcodes. Recommended!" }
     ],
     qa: [
-      { id: "q1-1", question: "Can I customize the song selection?", answer: "Currently, this Rose Quartz edition strictly features the 'Castle in the Sky' mechanical movement. Other designs play different tunes." },
-      { id: "q1-2", question: "Does it run on batteries?", answer: "No batteries are needed! It operates entirely using a high-quality wind-up mechanical clockwork engine." }
+      { id: "q1-1", question: "Does it scan directly from mobile and monitor screens?", answer: "Yes, fully! The advanced CMOS area imager can easily decode 1D/2D QR codes and barcodes off backlit digital screens." },
+      { id: "q1-2", question: "Is the battery rechargeable?", answer: "Yes! It comes with a 4500mAh heavy-duty rechargeable battery and charging dock included." }
     ],
     origin: ShippingOrigin.BANGLADESH,
     deliveryTime: "1-3 Days",
-    stockCount: 18,
+    stockCount: 245,
     shippingCost: 80,
     trackingAvailable: true,
     isBestSeller: true,
     isNewArrival: false,
     isDeal: true,
-    tags: ["rose", "music box", "crystal", "romantic", "handmade", "fast_delivery"]
+    tags: ["barcode", "scanner", "wireless", "pda", "warehouse", "fast_delivery"]
   },
   {
     id: "prod-2",
-    name: "Ultra HD Nebula Starry Sky Projector 2.0",
-    description: "Transform your bedroom into a breathtaking cosmic galaxy. Includes smart app customization, rotating nebulae speed, voice commands with Google Home & Alexa, and dynamic starry visual synchronization.",
-    category: "Smart Gadgets",
-    originalPrice: 3500,
-    discountedPrice: 1999,
-    rating: 4.9,
-    reviewCount: 128,
-    image: "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&q=80&w=400",
+    name: "OptiScan Omni-Directional 2D Desktop Scanner",
+    description: "Hands-free presentation desktop barcode scanner. Features high-speed omni-directional motion tolerance, smart automatic infra-red sensor trigger, and soft blue target laser helper.",
+    category: "Barcode Scanners",
+    originalPrice: 9500,
+    discountedPrice: 6800,
+    rating: 4.7,
+    reviewCount: 89,
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=400",
     gallery: [
-      "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&q=80&w=600",
-      "https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?auto=format&fit=crop&q=80&w=600"
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=600"
     ],
     specs: {
-      "Input Power": "USB Type-C (5V/2A)",
-      "Projection Range": "500 sq ft",
-      "Laser Wavelength": "523nm",
-      "Control": "Smart Life App & Remote Control",
-      "Music Sync": "Yes, built-in acoustic sensor"
+      "Interface": "USB Keyboard Wedge / USB Virtual COM",
+      "Sensor": "Linear Imager with Automatic Sleep",
+      "Motion Tolerance": "Up to 2.5 meters/second",
+      "Indicators": "Adjustable tone speaker & LED"
     },
     variants: [
-      { id: "v2-cosmic", name: "Cosmic Charcoal", priceModifier: 0, stock: 25 },
-      { id: "v2-polar", name: "Polar Ice White", priceModifier: 0, stock: 40 }
+      { id: "v2-white", name: "Classic Pearl White", priceModifier: 0, stock: 50 },
+      { id: "v2-black", name: "Matte Stealth Black", priceModifier: 0, stock: 60 }
     ],
     reviews: [
-      { id: "r2-1", userName: "Siam Chowdhury", rating: 5, date: "2026-05-30", comment: "Its laser mapping is razor sharp! Kids absolutely adore it. Easily the coolest gadget on my desk." },
-      { id: "r2-2", userName: "Mridula Sen", rating: 5, date: "2026-06-02", comment: "The galaxy speed controller and music sync works perfectly. Amazing product directly imported with fast local distribution." }
+      { id: "r2-1", userName: "Tanvir Ahmed", rating: 5, date: "2026-06-02", comment: "Saves a lot of cashier speed in our supermarket. Super accurate." }
     ],
-    qa: [
-      { id: "q2-1", question: "Is this safe for pets and young kids?", answer: "Yes, the projection light is fully certified. For laser star diodes, do look away from direct lens exposure, as standard safety." }
-    ],
+    qa: [],
     origin: ShippingOrigin.BANGLADESH,
     deliveryTime: "1-3 Days",
-    stockCount: 65,
+    stockCount: 110,
     shippingCost: 70,
     trackingAvailable: true,
-    isBestSeller: true,
+    isBestSeller: false,
     isNewArrival: true,
     isDeal: true,
-    tags: ["nebula", "galaxy", "projector", "smart", "led", "bedroom", "fast_delivery"]
+    tags: ["barcode", "handsfree", "desktop", "omni", "retail", "fast_delivery"]
   },
   {
     id: "prod-3",
-    name: "Retro Steampunk Mechanical Keyboard",
-    description: "A gorgeous retro typewriter-styled mechanical keyboard featuring vintage-inspired chrome circular keycaps, clicks-blue switches, and warm white LED backlighting in full-grain metal frame.",
-    category: "Computer Accessories",
-    originalPrice: 8500,
-    discountedPrice: 4800,
+    name: "DocuScan Ultra-Speed A4 Flatbed Scanner",
+    description: "Double-sided professional document scanner with automatic sheet feeder (ADF). Intelligent ultrasonic double-feed detection prevents pages from being skipped.",
+    category: "Document Scanners",
+    originalPrice: 38000,
+    discountedPrice: 26500,
+    rating: 4.8,
+    reviewCount: 156,
+    image: "https://images.unsplash.com/photo-1594913785162-e6785b49eed9?auto=format&fit=crop&q=80&w=400",
+    gallery: [
+      "https://images.unsplash.com/photo-1594913785162-e6785b49eed9?auto=format&fit=crop&q=80&w=600"
+    ],
+    specs: {
+      "Scan Speed": "60 pages per minute / 120 images per minute",
+      "ADF Capacity": "100 sheets A4 size",
+      "Optical Resolution": "1200 DPI clear scan",
+      "Daily Duty Cycle": "6,000 pages per day"
+    },
+    variants: [
+      { id: "v3-standard", name: "Standard ADF Scanner", priceModifier: 0, stock: 35 },
+      { id: "v3-pro", name: "Pro Flatbed Bundle (+Adf)", priceModifier: 6500, stock: 10 }
+    ],
+    reviews: [
+      { id: "r3-1", userName: "Laila Karim", rating: 5, date: "2026-05-18", comment: "Unbelievable scanning speed. Perfect for digitizing old archive folders." }
+    ],
+    qa: [],
+    origin: ShippingOrigin.CHINA,
+    deliveryTime: "25-30 Days",
+    stockCount: 45,
+    shippingCost: 350,
+    trackingAvailable: true,
+    isBestSeller: true,
+    isNewArrival: false,
+    isDeal: false,
+    tags: ["document", "scanner", "flatbed", "adf", "china_direct"]
+  },
+  {
+    id: "prod-4",
+    name: "BookScan Elite HD Overhead Book Scanner",
+    description: "Intelligent professional overhead scanner with patented flattening curve laser technology. Eliminates binding shadows and page distortions from physical books.",
+    category: "Document Scanners",
+    originalPrice: 48000,
+    discountedPrice: 35000,
+    rating: 4.9,
+    reviewCount: 67,
+    image: "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&q=80&w=400",
+    gallery: [
+      "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&q=80&w=600"
+    ],
+    specs: {
+      "Camera Sensor": "24 Megapixels Sony HD Lens",
+      "Format Size": "Supports up to A3 dimensions",
+      "Software features": "Auto crop, background removal, voice command trigger",
+      "OCR Tech": "Over 180 languages support"
+    },
+    variants: [
+      { id: "v4-classic", name: "Classic BookScan Console", priceModifier: 0, stock: 30 }
+    ],
+    reviews: [],
+    qa: [],
+    origin: ShippingOrigin.CHINA,
+    deliveryTime: "25-30 Days",
+    stockCount: 30,
+    shippingCost: 400,
+    trackingAvailable: true,
+    isBestSeller: false,
+    isNewArrival: true,
+    isDeal: false,
+    tags: ["book", "overhead", "scanner", "ocr", "china_direct"]
+  },
+  {
+    id: "prod-5",
+    name: "RingScan 2D Wearable Bluetooth Finger Scanner",
+    description: "Extremely lightweight smart ring-style scanner. Wearable on a single finger with a 360-degree rotation head and soft tactile button triggers.",
+    category: "Wearable Scanners",
+    originalPrice: 11500,
+    discountedPrice: 7900,
+    rating: 4.6,
+    reviewCount: 88,
+    image: "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&q=80&w=400",
+    gallery: [
+      "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&q=80&w=600"
+    ],
+    specs: {
+      "Weight": "Only 28 grams",
+      "Battery Capacity": "550mAh (12,000 continuous scans)",
+      "Wireless": "Bluetooth 5.0 Low Energy + 2.4G Dongle",
+      "Alerts": "LED, Vibration, and audio buzzer"
+    },
+    variants: [
+      { id: "v5-one", name: "Universal Finger Fit", priceModifier: 0, stock: 72 }
+    ],
+    reviews: [],
+    qa: [],
+    origin: ShippingOrigin.BANGLADESH,
+    deliveryTime: "1-3 Days",
+    stockCount: 72,
+    shippingCost: 80,
+    trackingAvailable: true,
+    isBestSeller: false,
+    isNewArrival: false,
+    isDeal: true,
+    tags: ["wearable", "ring", "finger", "barcode", "fast_delivery"]
+  },
+  {
+    id: "prod-6",
+    name: "GloveScan Smart Industrial Inventory Glove",
+    description: "Industrial heavy-duty scanning glove with integrated laser module on the knuckle and triggering push buttons on index finger.",
+    category: "Wearable Scanners",
+    originalPrice: 24000,
+    discountedPrice: 18500,
     rating: 4.7,
     reviewCount: 42,
     image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&q=80&w=400",
@@ -100,329 +200,235 @@ export const INITIAL_PRODUCTS: Product[] = [
       "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&q=80&w=600"
     ],
     specs: {
-      "Switch Type": "Tactile Clicky Blue Switch (50M Keystrokes)",
-      "Connection": "USB Type-C Wired & Bluetooth 5.0 Dual",
-      "Layout": "84-Key Compact layout",
-      "Shell Material": "Aluminum top plate with vintage rivets"
+      "Glove Material": "Breathable high-durability synthetic knit with anti-static threads",
+      "Battery": "1000mAh dual battery swap system",
+      "Display": "0.91 inch real-time OLED monitor statistics display"
     },
     variants: [
-      { id: "v3-rust", name: "Bronze Industrial Rust", priceModifier: 400, stock: 250 },
-      { id: "v3-silver", name: "Mirror Silver Chrome", priceModifier: 0, stock: 400 }
+      { id: "v6-left", name: "Left Hand Edition (Medium)", priceModifier: 0, stock: 80 },
+      { id: "v6-right", name: "Right Hand Edition (Medium)", priceModifier: 0, stock: 70 }
     ],
-    reviews: [
-      { id: "r3-1", userName: "Sadman Sakib", rating: 5, date: "2025-11-18", comment: "Typing speed increased beautifully or at least it sounds so wonderful! Stunning vintage style." }
-    ],
-    qa: [
-      { id: "q3-1", question: "Does it work with Mac and iPad OS?", answer: "Yes! There is a physical switch on the side to toggle between Mac/iOS layout and Windows/Android configurations." }
-    ],
+    reviews: [],
+    qa: [],
     origin: ShippingOrigin.CHINA,
     deliveryTime: "25-30 Days",
-    stockCount: 650,
+    stockCount: 150,
     shippingCost: 150,
     trackingAvailable: true,
     isBestSeller: false,
     isNewArrival: true,
     isDeal: false,
-    tags: ["keyboard", "typewriter", "steampunk", "mechanical", "retro", "china_direct"]
+    tags: ["wearable", "glove", "barcode", "industrial", "china_direct"]
   },
   {
-    id: "prod-4",
-    name: "Pure Wood Air-Humidifying Aroma Diffuser",
-    description: "Ultra-quiet ultrasonic humidifying diffuser encased in genuine Canadian red spruce or walnut timber. Promotes structural air hydration and features ambient warm light halo.",
-    category: "Home & Kitchen",
-    originalPrice: 2800,
-    discountedPrice: 1650,
-    rating: 4.6,
-    reviewCount: 89,
+    id: "prod-7",
+    name: "SwiftScan Rugged Cordless Laser Scanner",
+    description: "Industrial-grade heavy duty handheld scanner with reinforced shock-absorbing rubber armor casing. Offers unparalleled drop protection.",
+    category: "Handheld Scanners",
+    originalPrice: 7800,
+    discountedPrice: 5200,
+    rating: 4.9,
+    reviewCount: 215,
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=400",
+    gallery: [
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=600"
+    ],
+    specs: {
+      "Laser Grade": "Class II High Intensity Red Laser",
+      "Scan Rate": "500 decodes per second",
+      "Protection Standard": "IP67 dust and water certified waterproof",
+      "Drop rating": "Withstands 3.0 meter drops to asphalt"
+    },
+    variants: [
+      { id: "v7-cordless", name: "Cordless Bluetooth Edition", priceModifier: 1200, stock: 120 },
+      { id: "v7-wired", name: "Wired USB Standard Edition", priceModifier: 0, stock: 60 }
+    ],
+    reviews: [
+      { id: "r7-1", userName: "Aisha Begum", rating: 5, date: "2026-06-11", comment: "We dropped it from the third rack and it works perfectly without a scratch! Absolutely recommended for industrial warehouses." }
+    ],
+    qa: [],
+    origin: ShippingOrigin.BANGLADESH,
+    deliveryTime: "1-3 Days",
+    stockCount: 180,
+    shippingCost: 80,
+    trackingAvailable: true,
+    isBestSeller: true,
+    isNewArrival: false,
+    isDeal: false,
+    tags: ["handheld", "rugged", "laser", "cordless", "waterproof", "fast_delivery"]
+  },
+  {
+    id: "prod-8",
+    name: "LiteScan Compact USB Plug-and-Play Scanner",
+    description: "Comfortable and light ergonomic wired scanner for retail checkout counters. Works instantly with all POS systems, Excel sheets, and web registers.",
+    category: "Handheld Scanners",
+    originalPrice: 3500,
+    discountedPrice: 2200,
+    rating: 4.5,
+    reviewCount: 310,
     image: "https://images.unsplash.com/photo-1602928321679-560bb453f190?auto=format&fit=crop&q=80&w=400",
     gallery: [
       "https://images.unsplash.com/photo-1602928321679-560bb453f190?auto=format&fit=crop&q=80&w=600"
     ],
     specs: {
-      "Capacity": "400ml water tank",
-      "Running Time": "Up to 10 hours auto-shutoff",
-      "Noise Level": "<20dB whisper quiet",
-      "Material": "Spruce Timber external & medical grade PP reservoir"
+      "Interface": "USB Wired (1.8m coil cable)",
+      "Trigger Mode": "Manual press trigger or Continuous scan mode",
+      "Weight": "110g ultra-lightweight design",
+      "Compatibility": "No drivers needed"
     },
     variants: [
-      { id: "v4-walnut", name: "Smoked American Walnut", priceModifier: 200, stock: 8 },
-      { id: "v4-spruce", name: "Bright Nordic Spruce", priceModifier: 0, stock: 15 }
+      { id: "v8-one", name: "Standard Retail Bundle", priceModifier: 0, stock: 350 }
     ],
-    reviews: [
-      { id: "r4-1", userName: "Laila Karim", rating: 4, date: "2026-04-15", comment: "Really peaceful and blends into the wooden home furniture. Keeps the air moist in winter." }
-    ],
+    reviews: [],
     qa: [],
     origin: ShippingOrigin.BANGLADESH,
     deliveryTime: "1-3 Days",
-    stockCount: 23,
+    stockCount: 350,
     shippingCost: 65,
     trackingAvailable: true,
     isBestSeller: false,
     isNewArrival: false,
     isDeal: true,
-    tags: ["diffuser", "wood", "humidifier", "home", "aroma", "fast_delivery"]
+    tags: ["handheld", "retail", "wired", "cheap", "fast_delivery"]
   },
   {
-    id: "prod-5",
-    name: "Pocket Smart Inkless Thermal Printer",
-    description: "Compact wireless thermal sticker printer that fits in your hand. Prints labels, notes, journal images, and custom doodles instantly without expensive ink cartridges.",
-    category: "Electronics",
-    originalPrice: 4000,
-    discountedPrice: 2450,
+    id: "prod-9",
+    name: "OmniShield Fixed Mount Heavy Industrial Scanner",
+    description: "Highly automated fixed position high-resolution camera scanner designed for rapid logistics sorter lines, conveyers, and sorting operations.",
+    category: "Industrial Scanners",
+    originalPrice: 68000,
+    discountedPrice: 49000,
     rating: 4.8,
-    reviewCount: 95,
-    image: "https://images.unsplash.com/photo-1612815154858-60aa4c59edd6?auto=format&fit=crop&q=80&w=400",
+    reviewCount: 74,
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400",
+    gallery: [
+      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600"
+    ],
     specs: {
-      "Technology": "Direct Thermal (Zero Ink)",
-      "Resolution": "203 DPI high clarity",
-      "Battery": "1200mAh Lithium Rechargeable",
-      "Paper Size": "57mm thermal rolls",
-      "App Link": "Android & iOS Bluetooth Connection"
+      "Camera Sensor": "5 Megapixels CMOS Area Sensor",
+      "Speed Capacity": "Captures parcels moving up to 5 meters/sec",
+      "Housing": "Heavy industrial cast-aluminum casing",
+      "Connectivity": "Ethernet TCP/IP, RS232 Serial, USB"
     },
     variants: [
-      { id: "v5-mint", name: "Mint Emerald", priceModifier: 0, stock: 4 },
-      { id: "v5-pink", name: "Blush Unicorn", priceModifier: 0, stock: 11 }
-    ],
-    reviews: [
-      { id: "r5-1", userName: "Mahi Hasan", rating: 5, date: "2026-03-29", comment: "The easiest thing to print checklist sticky notes. Excellent app software with pre-made templates." }
-    ],
-    qa: [],
-    origin: ShippingOrigin.BANGLADESH,
-    deliveryTime: "1-3 Days",
-    stockCount: 15,
-    shippingCost: 80,
-    trackingAvailable: true,
-    isBestSeller: true,
-    isNewArrival: true,
-    isDeal: false,
-    tags: ["printer", "inkless", "thermal", "pocket", "mobile_accessories", "fast_delivery"]
-  },
-  {
-    id: "prod-6",
-    name: "Cyberpunk Transparent Bluetooth Speaker",
-    description: "Retro-futuristic transparent mechanical casing with visible circuitry board, pulsing dual subwoofer magnetic bass diaphragms, and 9 variable neon multi-color glow sequences.",
-    category: "Electronics",
-    originalPrice: 3200,
-    discountedPrice: 1780,
-    rating: 4.5,
-    reviewCount: 71,
-    image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&q=80&w=400",
-    specs: {
-      "Audio Output": "10W Dual Speaker + Passive Radiator",
-      "Battery": "1800mAh (8 Hours Playtime)",
-      "Bluetooth": "V5.3 High Dynamic Range",
-      "Materials": "Exploded Acrylic Transparent Shell & Steel Grilles"
-    },
-    variants: [
-      { id: "v6-neon", name: "Circuit Yellow Glow", priceModifier: 100, stock: 1500 },
-      { id: "v6-ice", name: "Cyberpunk Cobalt Blue", priceModifier: 0, stock: 1200 }
+      { id: "v9-industrial", name: "OmniShield Core Unit", priceModifier: 0, stock: 25 }
     ],
     reviews: [],
     qa: [],
     origin: ShippingOrigin.CHINA,
     deliveryTime: "25-30 Days",
-    stockCount: 2700,
-    shippingCost: 50,
-    trackingAvailable: true,
-    isBestSeller: false,
-    isNewArrival: true,
-    isDeal: true,
-    tags: ["speaker", "cyberpunk", "hologram", "transparent", "rgb", "china_direct"]
-  },
-  {
-    id: "prod-7",
-    name: "Classic Jade Pixiu Good Fortune Feng Shui Amulet",
-    description: "Hand-carved premium grade Chinese natural green jade amulet designed featuring the Pixiu beast of infinite fortune, wealth, and spiritual balance. Fully polished with traditional silk string knotting.",
-    category: "Gifts",
-    originalPrice: 5200,
-    discountedPrice: 3100,
-    rating: 4.9,
-    reviewCount: 46,
-    image: "https://images.unsplash.com/photo-1626880242111-a83d1627c271?auto=format&fit=crop&q=80&w=400",
-    specs: {
-      "Jade Type": "Natural Nephrite Emerald-Grade Jade",
-      "Pendant Size": "48mm x 28mm x 12mm",
-      "Necklace Weight": "42g",
-      "Chain": "Adjustable Hand-Braided Deep Red Silk"
-    },
-    variants: [
-      { id: "v7-emerald", name: "Classic Jade Green", priceModifier: 0, stock: 80 },
-      { id: "v7-cloud", name: "Mottled White/Gold Nephrite", priceModifier: 400, stock: 35 }
-    ],
-    reviews: [
-      { id: "r7-1", userName: "Emily Zhang", rating: 5, date: "2026-05-18", comment: "The touch of the jade is surprisingly cold and serene. A very protective charm, elegantly carved." }
-    ],
-    qa: [],
-    origin: ShippingOrigin.CHINA,
-    deliveryTime: "25-30 Days",
-    stockCount: 115,
-    shippingCost: 110,
-    trackingAvailable: true,
-    isBestSeller: true,
-    isNewArrival: false,
-    isDeal: false,
-    tags: ["jade", "pixiu", "charm", "china", "fortune", "traditional", "china_direct"]
-  },
-  {
-    id: "prod-8",
-    name: "Dynamic Smart Hydroponic Herb Garden",
-    description: "Indoor smart bento-style planter with automated adjustable 25W full spectrum LED crop lights and intelligent water circulating pump. Grow garden greens anywhere in your home.",
-    category: "Home & Kitchen",
-    originalPrice: 12000,
-    discountedPrice: 7500,
-    rating: 4.8,
-    reviewCount: 30,
-    image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=400",
-    specs: {
-      "Slots": "12 plant pods",
-      "Power": "12V low voltage secure plugin",
-      "Height Adjustable": "Max 50cm tall space",
-      "Modes": "Veg mode & Flower/Fruit dual spectrum selection"
-    },
-    variants: [
-      { id: "v8-white", name: "Enamel Garden White", priceModifier: 0, stock: 50 },
-      { id: "v8-black", name: "Modern Nordic Black", priceModifier: 0, stock: 45 }
-    ],
-    reviews: [],
-    qa: [],
-    origin: ShippingOrigin.CHINA,
-    deliveryTime: "25-30 Days",
-    stockCount: 95,
+    stockCount: 25,
     shippingCost: 350,
     trackingAvailable: true,
     isBestSeller: false,
     isNewArrival: true,
     isDeal: false,
-    tags: ["hydroponics", "planter", "garden", "smart", "home", "china_direct"]
-  },
-  {
-    id: "prod-9",
-    name: "Handmade Vintage Leather Travel Journal Set",
-    description: "An incredible heirloom traveler package. Includes a hand-sewn genuine oiled cowhide leather cover, 3 notebooks (dotted, lined, blank) with acid-free craft paper, and a brass fountain calligraphy pen.",
-    category: "Gifts",
-    originalPrice: 3800,
-    discountedPrice: 2200,
-    rating: 4.7,
-    reviewCount: 57,
-    image: "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&q=80&w=400",
-    specs: {
-      "Leather Style": "Full Grain Crazy Horse Leather",
-      "Paper Specs": "100 GSM Cream Archival-grade wood pulp",
-      "Size": "A5 (21cm x 13cm)",
-      "Pen Feed Size": "0.5mm Schmidt Golden Nib"
-    },
-    variants: [
-      { id: "v9-tan", name: "Vintage Tan", priceModifier: 0, stock: 15 },
-      { id: "v9-espresso", name: "Smoked Dark Espresso", priceModifier: 0, stock: 3 }
-    ],
-    reviews: [
-      { id: "r9-1", userName: "Jamil Hossain", rating: 5, date: "2026-06-01", comment: "The smell of pure leather is great. This premium journal takes me back in time. Great presentation box." }
-    ],
-    qa: [],
-    origin: ShippingOrigin.BANGLADESH,
-    deliveryTime: "1-3 Days",
-    stockCount: 18,
-    shippingCost: 80,
-    trackingAvailable: true,
-    isBestSeller: true,
-    isNewArrival: false,
-    isDeal: false,
-    tags: ["journal", "leather", "gift", "writing", "vintage", "fast_delivery"]
+    tags: ["industrial", "fixed", "camera", "highspeed", "china_direct"]
   },
   {
     id: "prod-10",
-    name: "Smart Watch Sports Active Pro",
-    description: "Professional grade multi-sensor fitness activity tracker with AMOLED curved edge glass, continuous arterial oxygen tracking, global GPS route sync, and water-resistance up to 50 meters.",
-    category: "Smart Gadgets",
-    originalPrice: 6500,
-    discountedPrice: 3850,
-    rating: 4.7,
-    reviewCount: 220,
-    image: "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&q=80&w=400",
-    specs: {
-      "Screen": "1.47-inch High Contrast AMOLED (450 nits)",
-      "Battery Lifetime": "Up to 14 days normal usage",
-      "Sensors": "6-axis Accelerometer, ECG Heart Rate, SpO2 sensor",
-      "Materials": "Surgical Steel, fluoroelastomer smart clasp band"
-    },
-    variants: [
-      { id: "v10-black", name: "Midnight Obsidian", priceModifier: 0, stock: 50 },
-      { id: "v10-orange", name: "Adventure Lava Orange", priceModifier: 150, stock: 30 }
-    ],
-    reviews: [],
-    qa: [],
-    origin: ShippingOrigin.BANGLADESH,
-    deliveryTime: "1-3 Days",
-    stockCount: 80,
-    shippingCost: 80,
-    trackingAvailable: true,
-    isBestSeller: true,
-    isNewArrival: false,
-    isDeal: true,
-    tags: ["smartwatch", "fitness", "gps", "amoled", "gadget", "fast_delivery"]
-  },
-  {
-    id: "prod-11",
-    name: "Luxury Silk Embroidery Oriental Shawl",
-    description: "Magnificent luxurious mulberry silk double-faced shawl handembroidered by master craftsmen of the Suzhou traditional guilds. Intricate plum blossom motifs with delicate hand-knotted fringe edges.",
-    category: "Fashion",
-    originalPrice: 15000,
-    discountedPrice: 8900,
+    name: "IntelliScan 3D Structured Surface Profiler",
+    description: "Metrology-grade 3D structured light scan sensor. Generates millions of 3D point-cloud coordinate vectors instantly for reverse engineering.",
+    category: "Industrial Scanners",
+    originalPrice: 180000,
+    discountedPrice: 135000,
     rating: 4.9,
     reviewCount: 18,
     image: "https://images.unsplash.com/photo-1615486511487-12f377ccb058?auto=format&fit=crop&q=80&w=400",
+    gallery: [
+      "https://images.unsplash.com/photo-1615486511487-12f377ccb058?auto=format&fit=crop&q=80&w=600"
+    ],
     specs: {
-      "Material": "100% Top Grade Natural Mulberry Silk",
-      "Craftsmanship": "Double-sided hand tapestry needlepoint",
-      "Dimensions": "180cm x 55cm",
-      "Care Guide": "Dry Clean strictly"
+      "Accuracy": "Up to 0.02 mm ultra-precision",
+      "Source": "Structured Blue LED light projection array",
+      "Output Formats": "STL, OBJ, PLY, ASC standard point files",
+      "Operating System": "Windows 10/11 Pro (64-bit)"
     },
     variants: [
-      { id: "v11-red", name: "Royal Emperor Crimson", priceModifier: 0, stock: 30 },
-      { id: "v11-jade", name: "Imperial Silk Jade", priceModifier: 500, stock: 15 }
+      { id: "v10-standard", name: "Metrology Pro Package", priceModifier: 0, stock: 10 }
     ],
     reviews: [],
     qa: [],
     origin: ShippingOrigin.CHINA,
     deliveryTime: "25-30 Days",
-    stockCount: 45,
-    shippingCost: 200,
+    stockCount: 10,
+    shippingCost: 500,
     trackingAvailable: true,
     isBestSeller: false,
     isNewArrival: true,
     isDeal: false,
-    tags: ["silk", "shawl", "embroidery", "luxury", "traditional", "scarf", "china_direct"]
+    tags: ["industrial", "3d", "laser", "metrology", "china_direct"]
+  },
+  {
+    id: "prod-11",
+    name: "PristinePrint Thermal High-Speed Label Printer",
+    description: "Heavy-duty thermal shipping label printer designed specifically for printing standard 4x6 labels with zero ink. Perfect for logistics sorting and shop inventory.",
+    category: "Label Printers",
+    originalPrice: 14500,
+    discountedPrice: 9800,
+    rating: 4.7,
+    reviewCount: 112,
+    image: "https://images.unsplash.com/photo-1612815154858-60aa4c59edd6?auto=format&fit=crop&q=80&w=400",
+    gallery: [
+      "https://images.unsplash.com/photo-1612815154858-60aa4c59edd6?auto=format&fit=crop&q=80&w=600"
+    ],
+    specs: {
+      "Printing Tech": "Direct Thermal (No ribbons, No ink needed)",
+      "Print Speed": "150 mm / second high-velocity printing",
+      "Resolution": "203 DPI crystal clear text",
+      "Paper Width": "Supports widths from 40mm up to 110mm"
+    },
+    variants: [
+      { id: "v11-bluetooth", name: "Wireless Bluetooth + USB Model", priceModifier: 1500, stock: 45 },
+      { id: "v11-usb", name: "Standard USB Wired Model", priceModifier: 0, stock: 50 }
+    ],
+    reviews: [
+      { id: "r11-1", userName: "Mohammad Sakib", rating: 5, date: "2026-04-29", comment: "Essential for printing courier labels in Dhaka. Printing is incredibly sharp and fast." }
+    ],
+    qa: [],
+    origin: ShippingOrigin.BANGLADESH,
+    deliveryTime: "1-3 Days",
+    stockCount: 95,
+    shippingCost: 80,
+    trackingAvailable: true,
+    isBestSeller: true,
+    isNewArrival: true,
+    isDeal: false,
+    tags: ["printer", "label", "thermal", "shipping", "fast_delivery"]
   },
   {
     id: "prod-12",
-    name: "Gentleman Leather Clutch and RFID Cardholder",
-    description: "Premium split dry-milled buffalo leather clutch wallet combo with military-grade dynamic electromagnetic guard block that keeps standard smart bank cards safe from scanning hackers.",
-    category: "Fashion",
-    originalPrice: 3200,
-    discountedPrice: 1800,
-    rating: 4.6,
-    reviewCount: 41,
-    image: "https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&q=80&w=400",
+    name: "PocketLabeler Handheld Smart Bluetooth Labeler",
+    description: "Compact wireless rechargeable label printer. Pairs instantly with your smartphone app to customize barcoding tags, prices, and cataloging codes.",
+    category: "Label Printers",
+    originalPrice: 3800,
+    discountedPrice: 2450,
+    rating: 4.8,
+    reviewCount: 195,
+    image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&q=80&w=400",
+    gallery: [
+      "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&q=80&w=600"
+    ],
     specs: {
-      "Material": "Waterproof full-grain calfskin leather",
-      "Clasp": "Heavy-Duty YKK Zinc Zipper",
-      "RFID Block": "Dual-layer nickel-copper lining (13.56MHz tested)",
-      "Card Capacity": "Up to 12 slots + central pocket divider"
+      "Power Source": "1200mAh Lithium Rechargeable battery",
+      "Tape Width": "15 mm max tape width",
+      "App Customization": "Rich library of symbols, fonts, and template frames",
+      "Weight": "160g pocketable design"
     },
     variants: [
-      { id: "v12-tan", name: "Smooth Cognac Tan", priceModifier: 0, stock: 22 },
-      { id: "v12-black", name: "Matte Pitch Black", priceModifier: 0, stock: 18 }
+      { id: "v12-mint", name: "Mint Emerald Gloss", priceModifier: 0, stock: 65 },
+      { id: "v12-white", name: "Chalk Matte White", priceModifier: 0, stock: 75 }
     ],
     reviews: [],
     qa: [],
     origin: ShippingOrigin.BANGLADESH,
     deliveryTime: "1-3 Days",
-    stockCount: 40,
+    stockCount: 140,
     shippingCost: 80,
     trackingAvailable: true,
     isBestSeller: false,
     isNewArrival: false,
     isDeal: true,
-    tags: ["wallet", "leather", "rfid", "gift", "clutch", "fast_delivery"]
+    tags: ["printer", "label", "portable", "mini", "bluetooth", "fast_delivery"]
   }
 ];
